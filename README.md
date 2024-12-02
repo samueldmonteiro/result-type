@@ -2,10 +2,9 @@
 
 [![Maintainer](http://img.shields.io/badge/maintainer-@samueldmonteiro-blue.svg?style=flat-square)](https://www.linkedin.com/in/samuel-m-4a4432250/)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/samueldmonteiro/result-type.svg?style=flat-square)](https://packagist.org/packages/samueldmonteiro/result-type)
-[![Latest Version](https://img.shields.io/github/release/samueldmonteiro/result-type.svg?style=flat-square)](https://github.com/samueldmonteiro/result-type/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Quality Score](https://img.shields.io/scrutinizer/g/samueldmonteiro/result-type.svg?style=flat-square)](https://scrutinizer-ci.com/g/samueldmonteiro/result-type)
 [![Total Downloads](https://img.shields.io/packagist/dt/samueldmonteiro/result-type.svg?style=flat-square)](https://packagist.org/packages/samueldmonteiro/result-type)
+
 ###### The result-type library introduces the Result Pattern to PHP, inspired by languages like Rust and Go. It provides a structured way to handle success and error outcomes explicitly, reducing reliance on exceptions. This approach makes your code more predictable, maintainable, and clear, ensuring every operation's result is properly managed.
 
 A biblioteca result-type traz o padrão Result para o PHP, inspirada em linguagens como Rust e Go. Ela oferece uma maneira estruturada de lidar com sucessos e erros de forma explícita, reduzindo a dependência de exceções. Essa abordagem torna seu código mais previsível, manutenível e claro, garantindo que o resultado de cada operação seja devidamente tratado.
