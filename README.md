@@ -74,9 +74,6 @@ if ($result->isSuccess()) {
 #### Using Static Methods:
 
 ```php
-<?php
-
-use Samueldmonteiro\Result\Result;
 
 /**
  * @return Result<float>
@@ -84,25 +81,33 @@ use Samueldmonteiro\Result\Result;
 function safeDivide(float $a, float $b): Result
 {
     if ($b === 0.0) {
-        // Return an error if division by zero
         return Result::error('Division by zero is not allowed.');
     }
 
     return Result::success(($a / $b, 'Division successful.');
 }
+```
 
-// Example usage
-$result = safeDivide(10, 2);
+#### Other Methods:
 
-if ($result->isSuccess()) {
+```php
+<?php
+
+use Samueldmonteiro\Result\Success;
+
+$result = New Error('error in application', 500, 'SERVER_ERROR');
+
+if (!$result->isError()) {
     echo $result->getMessage() . PHP_EOL; 
     echo "Result: " . $result->getValue() . PHP_EOL;
 
 } else {
-    echo "Error: " . $result->getErrorMessage() . PHP_EOL; 
+    echo "Error: " . $result->getErrorMessage() . PHP_EOL;
+    echo "Error Code: " . $result->getErrorCode() . PHP_EOL; 
+    echo "Error: " . $result->getErrorType() . PHP_EOL; 
+
 }
 ```
-
 
 
 ## Credits
