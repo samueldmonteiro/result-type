@@ -104,7 +104,7 @@ if (!$result->isError()) {
 } else {
     echo "Error: " . $result->getErrorMessage() . PHP_EOL;
     echo "Error Code: " . $result->getErrorCode() . PHP_EOL; 
-    echo "Error: " . $result->getErrorType() . PHP_EOL; 
+    echo "Error Type: " . $result->getErrorType() . PHP_EOL; 
 
 }
 ```
