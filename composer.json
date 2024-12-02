@@ -1,0 +1,27 @@
+{
+    "name": "samueldmonteiro/result-type",
+    "description": "Result Type for PHP",
+    "keywords": [
+        "result type",
+        "result",
+        "result pattern",
+        "pattern",
+        "option"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Samueldmonteiro\\Result\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Samuel Monteiro",
+            "email": "samuel.dvmonteiro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2.0"
+    }
+}
