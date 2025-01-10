@@ -23,12 +23,16 @@ function safeDivide(float $a, float $b): Result
 }
 
 // Example usage
-$result = safeDivide(10, 2);
+$result = safeDivide(10, 0);
 
 if ($result->isSuccess()) {
     echo $result->getMessage() . PHP_EOL; // "Division successful."
     echo "Result: " . $result->getValue() . PHP_EOL; // "Result: 5"
+    echo "Result: " . $result->getStatusCode() . PHP_EOL; // "Result: 5"
+
 
 } else {
     echo "Error: " . $result->getErrorMessage() . PHP_EOL;
+    echo "Error: " . $result->getStatusCode() . PHP_EOL;
+    var_dump($result->getContext());
 }

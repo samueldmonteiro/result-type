@@ -12,9 +12,10 @@ class Error extends Result
 {
     public function __construct(
         string $errorMessage,
-        ?int $errorCode = null,
-        string|object|null $errorType = null
+        ?int $statusCode = null,
+        string|object|null $errorType = null,
+        array $context = []
     ) {
-        parent::__construct(false, null, null, $errorMessage, $errorCode, $errorType);
+        parent::__construct(false, null, null, $errorMessage, $statusCode, $errorType, $context);
     }
 }

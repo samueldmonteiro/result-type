@@ -15,15 +15,16 @@ class Result
      * @param bool $isSuccess
      * @param T|null $value
      * @param string|null $errorMessage
-     * @param int|null $errorCode
+     * @param int|null $statusCode
      */
     public  function __construct(
         protected bool $isSuccess,
         protected ?string $message,
         protected mixed $value,
         protected ?string $errorMessage,
-        protected ?int $errorCode,
-        protected string|object|null $errorType
+        protected ?int $statusCode,
+        protected string|object|null $errorType,
+        protected array $context = []
     ) {}
 
     /**
@@ -32,9 +33,9 @@ class Result
      * @param T $value
      * @return self<T>
      */
-    public static function success(mixed $value, ?string $message = null): self
+    public static function success(mixed $value, ?string $message = null, ?int $statusCode = 200): self
     {
-        return new self(true, $message, $value, null, null, null);
+        return new self(true, $message, $value, null, $statusCode, null);
     }
 
     /**
@@ -44,9 +45,9 @@ class Result
      * @param int|null $errorCode
      * @return self<null>
      */
-    public static function error(string $errorMessage, ?int $errorCode = null, string|object|null $errorType = null): self
+    public static function error(string $errorMessage, ?int $statusCode = null, string|object|null $errorType = null, array $context = []): self
     {
-        return new self(false, null, null, $errorMessage, $errorCode, $errorType);
+        return new self(false, null, null, $errorMessage, $statusCode, $errorType, $context);
     }
 
     /**
@@ -100,13 +101,13 @@ class Result
     }
 
     /**
-     * Gets the error code if the result is a failure.
+     * Gets the status code if the result is a failure.
      *
      * @return ?int
      */
-    public function getErrorCode(): ?int
+    public function getStatusCode(): ?int
     {
-        return $this->errorCode;
+        return $this->statusCode;
     }
 
     /**
@@ -117,5 +118,10 @@ class Result
     public function getErrorType(): string|object|null
     {
         return $this->errorType;
+    }
+
+    public function getContext(): array
+    {
+        return $this->context;
     }
 }

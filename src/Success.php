@@ -15,8 +15,9 @@ class Success extends Result
      */
     public function __construct(
         mixed $value,
-        protected ?string $message = null
+        ?string $message = null,
+        ?int $statusCode = 200
     ) {
-        parent::__construct(true, $message, $value, null, null, null);
+        parent::__construct(true, $message, $value, null, $statusCode, null);
     }
 }
